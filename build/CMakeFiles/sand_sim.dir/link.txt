@@ -1,0 +1,3 @@
+C:\Strawberry\c\bin\cmake.exe -E rm -f CMakeFiles\sand_sim.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\sand_sim.dir/objects.a @CMakeFiles\sand_sim.dir\objects1.rsp
+C:\msys64\mingw64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\sand_sim.dir/objects.a -Wl,--no-whole-archive -o bin\sand_sim.exe -Wl,--out-implib,libsand_sim.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\sand_sim.dir\linkLibs.rsp

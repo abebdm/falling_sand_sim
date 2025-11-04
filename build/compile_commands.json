@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/abebd/Documents/coding/falling_sand_sim/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/sand_sim.dir/includes_CXX.rsp -g -std=c++20 -o CMakeFiles\\sand_sim.dir\\src\\main.cpp.obj -c C:\\Users\\abebd\\Documents\\coding\\falling_sand_sim\\src\\main.cpp",
+  "file": "C:/Users/abebd/Documents/coding/falling_sand_sim/src/main.cpp",
+  "output": "CMakeFiles/sand_sim.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/abebd/Documents/coding/falling_sand_sim/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/sand_sim.dir/includes_CXX.rsp -g -std=c++20 -o CMakeFiles\\sand_sim.dir\\src\\particles.cpp.obj -c C:\\Users\\abebd\\Documents\\coding\\falling_sand_sim\\src\\particles.cpp",
+  "file": "C:/Users/abebd/Documents/coding/falling_sand_sim/src/particles.cpp",
+  "output": "CMakeFiles/sand_sim.dir/src/particles.cpp.obj"
+},
+{
+  "directory": "C:/Users/abebd/Documents/coding/falling_sand_sim/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/sand_sim.dir/includes_CXX.rsp -g -std=c++20 -o CMakeFiles\\sand_sim.dir\\src\\physics.cpp.obj -c C:\\Users\\abebd\\Documents\\coding\\falling_sand_sim\\src\\physics.cpp",
+  "file": "C:/Users/abebd/Documents/coding/falling_sand_sim/src/physics.cpp",
+  "output": "CMakeFiles/sand_sim.dir/src/physics.cpp.obj"
+},
+{
+  "directory": "C:/Users/abebd/Documents/coding/falling_sand_sim/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/sand_sim.dir/includes_CXX.rsp -g -std=c++20 -o CMakeFiles\\sand_sim.dir\\src\\renderer.cpp.obj -c C:\\Users\\abebd\\Documents\\coding\\falling_sand_sim\\src\\renderer.cpp",
+  "file": "C:/Users/abebd/Documents/coding/falling_sand_sim/src/renderer.cpp",
+  "output": "CMakeFiles/sand_sim.dir/src/renderer.cpp.obj"
+},
+{
+  "directory": "C:/Users/abebd/Documents/coding/falling_sand_sim/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/sand_sim.dir/includes_CXX.rsp -g -std=c++20 -o CMakeFiles\\sand_sim.dir\\src\\world.cpp.obj -c C:\\Users\\abebd\\Documents\\coding\\falling_sand_sim\\src\\world.cpp",
+  "file": "C:/Users/abebd/Documents/coding/falling_sand_sim/src/world.cpp",
+  "output": "CMakeFiles/sand_sim.dir/src/world.cpp.obj"
+}
+]
