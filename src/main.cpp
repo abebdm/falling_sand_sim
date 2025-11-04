@@ -16,8 +16,8 @@ int main(int argc, char* argv[]) {
     Renderer renderer(WORLD_WIDTH, WORLD_HEIGHT);
 
     while (renderer.IsRunning()) {
-        renderer.HandleEvents();
-        world.setCell(WORLD_WIDTH / 2, 0, ParticleType::SAND); // Spawn sand at the top center
+        renderer.HandleEvents(world);
+        // world.setCell(WORLD_WIDTH / 2, 0, ParticleType::SAND); // Spawn sand at the top center
         world.simulateStep();
         renderer.Render(world);
     }

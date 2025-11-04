@@ -1,5 +1,6 @@
 #pragma once
 
+#include "particles.h"
 #include <SDL.h>
 #include <SDL_image.h>
 #include <vector>
@@ -25,7 +26,7 @@ public:
     bool IsRunning() const { return m_isRunning; }
 
     // Handle input events (like closing the window)
-    void HandleEvents();
+    void HandleEvents(World&);
 
     // Helper to map 24-bit RGB (used in ParticleProperties) to 32-bit format (used by SDL texture)
     uint32_t RGBToUint32(uint32_t rgb) const;
@@ -41,4 +42,6 @@ private:
 
     // A pixel buffer in CPU memory that is locked and copied to the GPU texture
     std::vector<uint32_t> m_pixel_buffer;
+
+    ParticleType m_selected_particle = ParticleType::SAND;
 };

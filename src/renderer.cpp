@@ -117,12 +117,32 @@ void Renderer::Render(const World& world) {
     SDL_RenderPresent(m_renderer); // Swap buffers to display the new frame
 }
 
-void Renderer::HandleEvents() {
+void Renderer::HandleEvents(World& world) {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT) {
             m_isRunning = false;
         }
         // Add more event handling here (keyboard, mouse clicks for placing particles, etc.)
+
+        if (event.type == SDL_KEYDOWN) {
+            switch (event.key.keysym.sym) {
+                case SDLK_s:
+                    m_selected_particle = ParticleType::SAND;
+                    break;
+                case SDLK_e:
+                   m_selected_particle = ParticleType::EMPTY;
+                   break;
+                default:
+                    break;
+            }
+        }
+    }
+    int mouseX_pixels, mouseY_pixels;
+    uint32_t mouseState = SDL_GetMouseState(&mouseX_pixels, &mouseY_pixels);
+    if (mouseState & SDL_BUTTON(SDL_BUTTON_LEFT)) {
+        int cellX = mouseX_pixels / CELL_SIZE;
+        int cellY = mouseY_pixels / CELL_SIZE;
+        world.setCell(cellX, cellY, m_selected_particle);
     }
 }
