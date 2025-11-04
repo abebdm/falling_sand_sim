@@ -8,4 +8,5 @@ void updateSand(World& world, int x, int y);
 const ParticleProperties PARTICLE_PROPERTIES[] = {
     {"Empty", 0x000000, 0, updateStatic, UpdateDir::STATIC},
     {"Sand", 0xFAC88D, 1, updateSand, UpdateDir::FALLING},
+    {"Rock", 0x888888, 5, updateStatic, UpdateDir::STATIC},
 };

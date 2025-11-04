@@ -11,7 +11,7 @@ class World;
 class Renderer {
 public:
     // Renderer parameters (should be defined based on your World dimensions)
-    static constexpr int CELL_SIZE = 2; // 1 pixel per particle
+    static constexpr int CELL_SIZE = 4; // 1 pixel per particle
     
     // Constructor initializes SDL, creates window and renderer
     Renderer(int width, int height);

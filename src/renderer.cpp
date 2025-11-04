@@ -133,6 +133,9 @@ void Renderer::HandleEvents(World& world) {
                 case SDLK_e:
                    m_selected_particle = ParticleType::EMPTY;
                    break;
+                case SDLK_r:
+                   m_selected_particle = ParticleType::ROCK;
+                   break;
                 default:
                     break;
             }

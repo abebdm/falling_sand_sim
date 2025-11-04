@@ -10,6 +10,8 @@ enum class ParticleType : uint8_t{
     
     SAND = 1,
 
+    ROCK = 2,
+
     //WATER = 10,
 
     TYPE_COUNT
@@ -23,7 +25,7 @@ enum class UpdateDir {
 
 struct Cell {
     ParticleType type;
-    uint8_t state; // Additional state information for the cell
+    uint8_t state;
 };
 
 using UpdateFn = void (*)(World& world, int x, int y);

@@ -6,8 +6,8 @@
 #include <cstdlib>
 #include <ctime>
 
-const int WORLD_WIDTH = 500;
-const int WORLD_HEIGHT = 500;
+const int WORLD_WIDTH = 250;
+const int WORLD_HEIGHT = 250;
 
 int main(int argc, char* argv[]) {
     std::srand(std::time(0));
