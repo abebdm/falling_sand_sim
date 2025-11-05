@@ -20,6 +20,7 @@ public:
 private:
     int width;
     int height;
+    bool update_toggle = false;
 
     std::vector<Cell> current_state;
     std::vector<Cell> next_state;

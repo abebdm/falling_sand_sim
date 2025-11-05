@@ -31,32 +31,60 @@ void World::setCellNext(int x, int y, ParticleType type) {
 void World::simulateStep() {
     next_state = current_state;
 
-    for(int y = height - 1; y >= 0; --y) {
-        for(int x = 0; x < width; ++x) {
-            
-            ParticleType type = getCell(x, y).type; // Read from current_state
-            if (type == ParticleType::EMPTY) continue;
-            
-            const auto& props = PARTICLE_PROPERTIES[(int)type];
-            if (props.updateDir == UpdateDir::FALLING) {
-                props.updateFunction(*this, x, y); // Writes to next_state
+    if (update_toggle) {
+        for(int y = height - 1; y >= 0; --y) {
+            for(int x = 0; x < width; ++x) {
+                
+                ParticleType type = getCell(x, y).type; // Read from current_state
+                if (type == ParticleType::EMPTY) continue;
+                
+                const auto& props = PARTICLE_PROPERTIES[(int)type];
+                if (props.updateDir == UpdateDir::FALLING) {
+                    props.updateFunction(*this, x, y); // Writes to next_state
+                }
             }
         }
-    }
 
-    for(int y = 0; y < height; ++y) {
-        for(int x = 0; x < width; ++x) {
+        for(int y = 0; y < height; ++y) {
+            for(int x = 0; x < width; ++x) {
 
-            ParticleType type = getCell(x, y).type; // Read from current_state
-            if (type == ParticleType::EMPTY) continue;
-            
-            const auto& props = PARTICLE_PROPERTIES[(int)type];
-            if (props.updateDir == UpdateDir::RISING) {
-                props.updateFunction(*this, x, y); // Writes to next_state
+                ParticleType type = getCell(x, y).type; // Read from current_state
+                if (type == ParticleType::EMPTY) continue;
+                
+                const auto& props = PARTICLE_PROPERTIES[(int)type];
+                if (props.updateDir == UpdateDir::RISING) {
+                    props.updateFunction(*this, x, y); // Writes to next_state
+                }
             }
         }
-    }
+        update_toggle = false;
+    } else {
+        for(int y = height - 1; y >= 0; --y) {
+            for(int x = width - 1; x >= 0; --x) {
+                
+                ParticleType type = getCell(x, y).type; // Read from current_state
+                if (type == ParticleType::EMPTY) continue;
+                
+                const auto& props = PARTICLE_PROPERTIES[(int)type];
+                if (props.updateDir == UpdateDir::FALLING) {
+                    props.updateFunction(*this, x, y); // Writes to next_state
+                }
+            }
+        }
 
+        for(int y = 0; y < height; ++y) {
+            for(int x = width - 1; x >= 0; --x) {
+                ParticleType type = getCell(x, y).type; // Read from current_state
+                if (type == ParticleType::EMPTY) continue;
+                
+                const auto& props = PARTICLE_PROPERTIES[(int)type];
+                if (props.updateDir == UpdateDir::RISING) {
+                    props.updateFunction(*this, x, y); // Writes to next_state
+                }
+            }
+        }
+        update_toggle = true;
+    }
     current_state = next_state;
 }
 

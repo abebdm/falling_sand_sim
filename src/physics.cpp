@@ -15,13 +15,17 @@ void updateSand(World& world, int x, int y) {
 
     int dx = std::rand() % 2 == 0 ? -1 : 1;
     
-    if (world.isInBounds(x + dx, y + 1) && PARTICLE_PROPERTIES[(uint8_t)world.getCellNext(x + dx, y+1).type].density < PARTICLE_PROPERTIES[(uint8_t)ParticleType::SAND].density) {
+    if (world.isInBounds(x + dx, y + 1)
+    && PARTICLE_PROPERTIES[(uint8_t)world.getCellNext(x + dx, y+1).type].density < PARTICLE_PROPERTIES[(uint8_t)ParticleType::SAND].density
+    && PARTICLE_PROPERTIES[(uint8_t)world.getCellNext(x + dx, y).type].density < PARTICLE_PROPERTIES[(uint8_t)ParticleType::SAND].density) {
         world.setCellNext(x + dx, y + 1, ParticleType::SAND);
         world.setCellNext(x, y, ParticleType::EMPTY);
         return;
     }
 
-    if (world.isInBounds(x - dx, y + 1) && PARTICLE_PROPERTIES[(uint8_t)world.getCellNext(x - dx, y+1).type].density < PARTICLE_PROPERTIES[(uint8_t)ParticleType::SAND].density) {
+    if (world.isInBounds(x - dx, y + 1)
+    && PARTICLE_PROPERTIES[(uint8_t)world.getCellNext(x - dx, y+1).type].density < PARTICLE_PROPERTIES[(uint8_t)ParticleType::SAND].density
+    && PARTICLE_PROPERTIES[(uint8_t)world.getCellNext(x - dx, y).type].density < PARTICLE_PROPERTIES[(uint8_t)ParticleType::SAND].density) {
         world.setCellNext(x - dx, y + 1, ParticleType::SAND);
         world.setCellNext(x, y, ParticleType::EMPTY);
         return;
